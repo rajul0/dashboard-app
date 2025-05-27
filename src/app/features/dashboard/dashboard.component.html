@@ -1,0 +1,58 @@
+<main class="">
+  <nav
+    class="h-20 flex flex-row px-8 justify-between place-items-center bg-black"
+  >
+    <p class="text-2xl text-gray-500">Dashboard</p>
+    <button
+      (click)="signOut()"
+      class="text-gray-500 flex flex-row place-items-center"
+    >
+      <mat-icon svgIcon="sign-out"></mat-icon>
+      <div class="text-lg">Sign Out</div>
+    </button>
+  </nav>
+  <div class="p-8">
+    <h2 class="text-2xl font-semibold mb-4">Overview</h2>
+
+    <div class="w-full flex flex-row justify-between">
+      <!-- Donut Chart Card -->
+      <div class="bg-white rounded-lg shadow w-full md:w-2/5 p-4">
+        <div class="border-b pb-2 font-medium text-gray-700 mb-4">
+          Donut Chart
+        </div>
+        <div #donutChart class="w-full h-72"></div>
+      </div>
+
+      <!-- Bar Chart Card -->
+      <div class="bg-white rounded-lg shadow w-full md:w-2/5 p-4">
+        <div class="border-b pb-2 font-medium text-gray-700 mb-4">
+          Bar Chart
+        </div>
+        <div #barChart class="w-full h-72"></div>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-4">User List</h2>
+
+    <div class="overflow-x-auto">
+      <table class="min-w-full border border-gray-300 text-sm text-left">
+        <thead class="bg-gray-100">
+          <tr>
+            <th class="px-4 py-2 border">#</th>
+            <th class="px-4 py-2 border">First Name</th>
+            <th class="px-4 py-2 border">Last Name</th>
+            <th class="px-4 py-2 border">User Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users; index as i" class="hover:bg-gray-50">
+            <td class="px-4 py-2 border">{{ i + 1 }}</td>
+            <td class="px-4 py-2 border">{{ user.firstName }}</td>
+            <td class="px-4 py-2 border">{{ user.lastName }}</td>
+            <td class="px-4 py-2 border">{{ user.username }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
