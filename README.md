@@ -53,7 +53,8 @@ npm run electron build
 
 This starts Electron using the existing Angular build in the dist/ folder.
 
-📁 Project Structure
+## 📁 Project Structure
+
 src/ – Angular application source code
 
 src-electron/app.js – Electron main process file
@@ -65,3 +66,4 @@ package.json – Project configuration and build scripts
 Offline authentication will only work after the default user has been initialized.
 
 Angular version used: 14.2.0
+Typescript version used: 5.8.2
