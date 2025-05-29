@@ -36,7 +36,7 @@ async function verifyPassword(password, hash) {
   return await bcrypt.compare(password, hash);
 }
 
-// Inisialisasi user default
+// Initiate user
 (async () => {
   try {
     await saveUser("user@aemenersol.com", "Test@123");
