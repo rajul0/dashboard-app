@@ -21,25 +21,24 @@ A desktop dashboard application built using **Angular v14** and **Electron**. Th
 ```bash
 git clone <repository-url>
 cd dashboard-app
-Install dependencies
-
-bash
-Copy
-Edit
 npm install
+```
+
 🚀 Running the App
 🔹 Run Angular in Development Mode
-bash
-Copy
-Edit
+
+```bash
 npm run start
+```
+
 This runs the Angular application in development mode at http://localhost:4200.
 
 🔹 Build Angular and Launch Electron
-bash
-Copy
-Edit
-npm run electron-build
+
+```bash
+ng build
+```
+
 This will:
 
 Build the Angular application to the dist/ folder
@@ -47,10 +46,11 @@ Build the Angular application to the dist/ folder
 Start Electron and load the built Angular app
 
 🔹 Run Electron Only (after Angular has been built)
-bash
-Copy
-Edit
-npm run electron
+
+```bash
+npm run electron build
+```
+
 This starts Electron using the existing Angular build in the dist/ folder.
 
 📁 Project Structure
@@ -65,4 +65,3 @@ package.json – Project configuration and build scripts
 Offline authentication will only work after the default user has been initialized.
 
 Angular version used: 14.2.0
-```
