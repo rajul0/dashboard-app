@@ -31,7 +31,6 @@ export class DashboardComponent implements OnInit {
       this.renderBarChart(data.chartBar);
       this.renderDonutChart(data.chartDonut);
     });
-    console.log(this.barChart);
   }
 
   renderDonutChart(data: any[]) {
@@ -111,7 +110,7 @@ export class DashboardComponent implements OnInit {
   }
 
   signOut() {
-    const confirmed = window.confirm('Apakah Anda yakin ingin keluar?');
+    const confirmed = window.confirm('Are you sure you want to exit??');
     if (confirmed) {
       this.authService.logout();
       this.router.navigate(['/login']);
