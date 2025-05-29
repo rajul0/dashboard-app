@@ -12,11 +12,11 @@
     </button>
   </nav>
   <div class="p-8">
-    <h2 class="text-2xl font-semibold mb-4">Overview</h2>
+    <p class="text-2xl font-smedium mb-4">Overview</p>
 
-    <div class="w-full flex flex-row justify-between">
+    <div class="w-full flex flex-col gap-y-4 md:flex-row justify-between mb-8">
       <!-- Donut Chart Card -->
-      <div class="bg-white rounded-lg shadow w-full md:w-2/5 p-4">
+      <div class="bg-white rounded-lg shadow w-full md:w-[calc(50vw-80px)] p-4">
         <div class="border-b pb-2 font-medium text-gray-700 mb-4">
           Donut Chart
         </div>
@@ -24,7 +24,7 @@
       </div>
 
       <!-- Bar Chart Card -->
-      <div class="bg-white rounded-lg shadow w-full md:w-2/5 p-4">
+      <div class="bg-white rounded-lg shadow w-full md:w-[calc(50vw-80px)] p-4">
         <div class="border-b pb-2 font-medium text-gray-700 mb-4">
           Bar Chart
         </div>
@@ -32,24 +32,32 @@
       </div>
     </div>
 
-    <h2 class="text-2xl font-semibold mt-8 mb-4">User List</h2>
+    <p class="text-2xl font-smedium mb-4">User List</p>
 
     <div class="overflow-x-auto">
       <table class="min-w-full border border-gray-300 text-sm text-left">
         <thead class="bg-gray-100">
           <tr>
-            <th class="px-4 py-2 border">#</th>
-            <th class="px-4 py-2 border">First Name</th>
-            <th class="px-4 py-2 border">Last Name</th>
-            <th class="px-4 py-2 border">User Name</th>
+            <th class="px-4 py-2 border text-center font-normal">#</th>
+            <th class="px-4 py-2 border text-center font-normal">First Name</th>
+            <th class="px-4 py-2 border text-center font-normal">Last Name</th>
+            <th class="px-4 py-2 border text-center font-normal">User Name</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let user of users; index as i" class="hover:bg-gray-50">
-            <td class="px-4 py-2 border">{{ i + 1 }}</td>
-            <td class="px-4 py-2 border">{{ user.firstName }}</td>
-            <td class="px-4 py-2 border">{{ user.lastName }}</td>
-            <td class="px-4 py-2 border">{{ user.username }}</td>
+            <td class="px-4 py-2 border text-center font-normal">
+              {{ i + 1 }}
+            </td>
+            <td class="px-4 py-2 border text-center font-normal">
+              {{ user.firstName }}
+            </td>
+            <td class="px-4 py-2 border text-center font-normal">
+              {{ user.lastName }}
+            </td>
+            <td class="px-4 py-2 border text-center font-normal">
+              {{ user.username }}
+            </td>
           </tr>
         </tbody>
       </table>
