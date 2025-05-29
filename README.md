@@ -36,7 +36,7 @@ This runs the Angular application in development mode at http://localhost:4200.
 🔹 Build Angular and Launch Electron
 
 ```bash
-ng build
+npm run electron-build
 ```
 
 This will:
@@ -48,7 +48,7 @@ Start Electron and load the built Angular app
 🔹 Run Electron Only (after Angular has been built)
 
 ```bash
-npm run electron build
+npm run electron
 ```
 
 This starts Electron using the existing Angular build in the dist/ folder.
