@@ -20,7 +20,7 @@ A desktop dashboard application built using **Angular v14** and **Electron**. Th
 
 ```bash
 git clone <repository-url>
-cd dashboardSimple
+cd dashboard-app
 npm install
 ```
 
