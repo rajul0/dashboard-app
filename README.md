@@ -6,7 +6,7 @@ A desktop dashboard application built using **Angular v14** and **Electron**. Th
 
 ## ⚙️ Features
 
-- Built with **Angular v14.2.x**
+- Built with **Angular v14.2.x** and **Typescript 5.8.2**
 - Desktop application with **Electron**
 - **Offline login** support using PouchDB and bcrypt
 - Data visualization using **amCharts**, **Plotly.js**, and **D3.js**
@@ -66,4 +66,5 @@ package.json – Project configuration and build scripts
 Offline authentication will only work after the default user has been initialized.
 
 Angular version used: 14.2.0
+
 Typescript version used: 5.8.2
