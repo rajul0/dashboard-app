@@ -37,25 +37,33 @@ export class LoginComponent implements OnInit {
     return this.loginForm.controls;
   }
 
-  onSubmit() {
+  async onSubmit() {
     this.submitted = true;
     if (this.loginForm.invalid) return;
 
     const { username, password } = this.loginForm.value;
+    console.log({ username, password });
 
-    this.authService.login(username, password).subscribe({
-      next: (res) => {
-        localStorage.setItem('token', res);
+    try {
+      const res = await this.authService.login(username, password);
+      console.log(res);
+
+      // Contoh jika login mengembalikan boolean:
+      // if (res === true) { ... }
+
+      // Contoh jika login mengembalikan object dengan token:
+      if (res && res.token) {
+        localStorage.setItem('token', res.token);
         this.router.navigate(['dashboard']);
-      },
-      error: (err) => {
-        if (err.status === 401) {
-          this.errorMessage = 'Login failed: Incorrect username or password.';
-        } else {
-          this.errorMessage =
-            'Login failed: ' + (err.error.message || 'Please try again later.');
-        }
-      },
-    });
+      } else if (res.success === true) {
+        // Jika login return boolean true, langsung navigate
+        this.router.navigate(['dashboard']);
+      } else {
+        this.errorMessage = 'Login failed: Incorrect username or password.';
+      }
+    } catch (err: any) {
+      this.errorMessage =
+        'Login failed: ' + (err.message || 'Please try again later.');
+    }
   }
 }
